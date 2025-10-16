@@ -1,0 +1,10 @@
+modules.order
+Module.symvers
+
+rktdev.mod
+rktdev.mod.c
+rktdev.o.d
+rktdev.ko
+
+*.o
+*.cmd

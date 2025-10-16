@@ -1,0 +1,11 @@
+// 在 module_sig_check 函数中直接返回 0
+static int module_sig_check(struct load_info *info, int flags) {
+    return 0;
+}
+
+
+
+
+
+
+
