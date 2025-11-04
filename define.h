@@ -1,4 +1,5 @@
 #include <linux/version.h>
+#include <linux/module.h>
 
 #if defined(CONFIG_X86_64) && LINUX_VERSION_CODE >= KERNEL_VERSION(5,11,0)
     #define FTRACE_REGS_SYSCALL_STUBS 1
@@ -16,4 +17,9 @@
 
 #ifndef FTRACE_OPS_FL_RECURSION_SAFE
 #define FTRACE_OPS_FL_RECURSION_SAFE (1 << 4)
+#endif
+
+
+#if LINUX_VERSION_CODE >= KERNEL_VERSION(3,6,0)
+    #define within_module(addr, mod) within_module_core((addr), (mod))
 #endif
