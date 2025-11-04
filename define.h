@@ -20,6 +20,7 @@
 #endif
 
 
+# CentOS support
 #if LINUX_VERSION_CODE >= KERNEL_VERSION(3,6,0)
     #define within_module(addr, mod) within_module_core((addr), (mod))
 #endif
